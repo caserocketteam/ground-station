@@ -1,7 +1,7 @@
 import Tkinter as tk
 import time
 import getData
-import sendData
+import callbacks
 from threading import Thread
 
 root = tk.Tk()
@@ -20,13 +20,7 @@ alt = tk.Label(root, textvariable=alt_val).grid(row=0, column=1)
 rot = tk.Label(root, textvariable=rot_val).grid(row=1, column=1)
 acc = tk.Label(root, textvariable=acc_val).grid(row=2, column=1)
 
-def gps_callback():
-  sendData.start_gps()
-
-gps = tk.Button(root, text="Connect GPS", command=gps_callback).grid(row=0, column=3)
-
-def gps_callback():
-  sendData.start_gps()
+gps = tk.Button(root, text="Connect GPS", command=callbacks.gps_callback).grid(row=0, column=3)
 
 alive = True
 
