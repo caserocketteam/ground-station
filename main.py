@@ -27,9 +27,9 @@ alive = True
 def run():
   while True:
     print getData.read()
-    alt_val.set("0.00 m")
-    rot_val.set("0.00 d/s")
-    acc_val.set("0.00 m/s")
+    alt_val.set(getData.get_alt())
+    rot_val.set(getData.get_rot())
+    acc_val.set(getData.get_acc())
     time.sleep(1)
     if alive == False:
       raise Exception("Window Closed...")
